@@ -7,27 +7,45 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE5E0AE323AC32FC00C9FC54 /* Knight.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5E0AE223AC32FC00C9FC54 /* Knight.swift */; };
+		AE5E0AE523AC331E00C9FC54 /* Wizard.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5E0AE423AC331E00C9FC54 /* Wizard.swift */; };
+		AE5E0AE723AC333200C9FC54 /* Squire.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5E0AE623AC333200C9FC54 /* Squire.swift */; };
+		AE5E0AE923AC334900C9FC54 /* King.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5E0AE823AC334900C9FC54 /* King.swift */; };
+		AE5E0AF423AC612C00C9FC54 /* Clothing.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5E0AF323AC612C00C9FC54 /* Clothing.swift */; };
+		AE5E0AF623ADC35300C9FC54 /* clothingClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5E0AF523ADC35300C9FC54 /* clothingClasses.swift */; };
 		AE9B8AED23AAC65300F8F47D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9B8AEC23AAC65300F8F47D /* AppDelegate.swift */; };
-		AE9B8AEF23AAC65300F8F47D /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = AE9B8AEE23AAC65300F8F47D /* GameScene.sks */; };
-		AE9B8AF123AAC65300F8F47D /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = AE9B8AF023AAC65300F8F47D /* Actions.sks */; };
 		AE9B8AF323AAC65300F8F47D /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9B8AF223AAC65300F8F47D /* GameScene.swift */; };
 		AE9B8AF523AAC65300F8F47D /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9B8AF423AAC65300F8F47D /* GameViewController.swift */; };
 		AE9B8AF823AAC65300F8F47D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE9B8AF623AAC65300F8F47D /* Main.storyboard */; };
 		AE9B8AFA23AAC65600F8F47D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE9B8AF923AAC65600F8F47D /* Assets.xcassets */; };
 		AE9B8AFD23AAC65600F8F47D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE9B8AFB23AAC65600F8F47D /* LaunchScreen.storyboard */; };
+		AE9B8B0723ABD89700F8F47D /* camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9B8B0623ABD89700F8F47D /* camera.swift */; };
+		AE9B8B0923ABD89900F8F47D /* colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9B8B0823ABD89900F8F47D /* colors.swift */; };
+		AE9B8B0C23ABDB9600F8F47D /* Human.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9B8B0B23ABDB9600F8F47D /* Human.swift */; };
+		AE9B8B0E23ABDC9B00F8F47D /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9B8B0D23ABDC9B00F8F47D /* Item.swift */; };
+		AE9B8B1223AC24FB00F8F47D /* structClothing.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9B8B1123AC24FB00F8F47D /* structClothing.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AE5E0AE223AC32FC00C9FC54 /* Knight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Knight.swift; sourceTree = "<group>"; };
+		AE5E0AE423AC331E00C9FC54 /* Wizard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wizard.swift; sourceTree = "<group>"; };
+		AE5E0AE623AC333200C9FC54 /* Squire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Squire.swift; sourceTree = "<group>"; };
+		AE5E0AE823AC334900C9FC54 /* King.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = King.swift; sourceTree = "<group>"; };
+		AE5E0AF323AC612C00C9FC54 /* Clothing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clothing.swift; sourceTree = "<group>"; };
+		AE5E0AF523ADC35300C9FC54 /* clothingClasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = clothingClasses.swift; sourceTree = "<group>"; };
 		AE9B8AE923AAC65300F8F47D /* No Man's Land.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "No Man's Land.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE9B8AEC23AAC65300F8F47D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AE9B8AEE23AAC65300F8F47D /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		AE9B8AF023AAC65300F8F47D /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
 		AE9B8AF223AAC65300F8F47D /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		AE9B8AF423AAC65300F8F47D /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		AE9B8AF723AAC65300F8F47D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AE9B8AF923AAC65600F8F47D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AE9B8AFC23AAC65600F8F47D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AE9B8AFE23AAC65600F8F47D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AE9B8B0623ABD89700F8F47D /* camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = camera.swift; sourceTree = "<group>"; };
+		AE9B8B0823ABD89900F8F47D /* colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = colors.swift; sourceTree = "<group>"; };
+		AE9B8B0B23ABDB9600F8F47D /* Human.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Human.swift; sourceTree = "<group>"; };
+		AE9B8B0D23ABDC9B00F8F47D /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		AE9B8B1123AC24FB00F8F47D /* structClothing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = structClothing.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +59,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AE5E0AEA23AC604600C9FC54 /* Clothing */ = {
+			isa = PBXGroup;
+			children = (
+				AE9B8B1123AC24FB00F8F47D /* structClothing.swift */,
+				AE5E0AF323AC612C00C9FC54 /* Clothing.swift */,
+				AE5E0AF523ADC35300C9FC54 /* clothingClasses.swift */,
+			);
+			path = Clothing;
+			sourceTree = "<group>";
+		};
 		AE9B8AE023AAC65300F8F47D = {
 			isa = PBXGroup;
 			children = (
@@ -60,9 +88,8 @@
 		AE9B8AEB23AAC65300F8F47D /* No Man's Land */ = {
 			isa = PBXGroup;
 			children = (
+				AE9B8B0A23ABD8A900F8F47D /* Global */,
 				AE9B8AEC23AAC65300F8F47D /* AppDelegate.swift */,
-				AE9B8AEE23AAC65300F8F47D /* GameScene.sks */,
-				AE9B8AF023AAC65300F8F47D /* Actions.sks */,
 				AE9B8AF223AAC65300F8F47D /* GameScene.swift */,
 				AE9B8AF423AAC65300F8F47D /* GameViewController.swift */,
 				AE9B8AF623AAC65300F8F47D /* Main.storyboard */,
@@ -71,6 +98,30 @@
 				AE9B8AFE23AAC65600F8F47D /* Info.plist */,
 			);
 			path = "No Man's Land";
+			sourceTree = "<group>";
+		};
+		AE9B8B0A23ABD8A900F8F47D /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				AE9B8B0623ABD89700F8F47D /* camera.swift */,
+				AE9B8B0823ABD89900F8F47D /* colors.swift */,
+				AE9B8B0D23ABDC9B00F8F47D /* Item.swift */,
+				AE9B8B1323AC306E00F8F47D /* Humans */,
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
+		AE9B8B1323AC306E00F8F47D /* Humans */ = {
+			isa = PBXGroup;
+			children = (
+				AE5E0AEA23AC604600C9FC54 /* Clothing */,
+				AE9B8B0B23ABDB9600F8F47D /* Human.swift */,
+				AE5E0AE223AC32FC00C9FC54 /* Knight.swift */,
+				AE5E0AE423AC331E00C9FC54 /* Wizard.swift */,
+				AE5E0AE623AC333200C9FC54 /* Squire.swift */,
+				AE5E0AE823AC334900C9FC54 /* King.swift */,
+			);
+			path = Humans;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -132,10 +183,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE9B8AF823AAC65300F8F47D /* Main.storyboard in Resources */,
-				AE9B8AEF23AAC65300F8F47D /* GameScene.sks in Resources */,
 				AE9B8AFA23AAC65600F8F47D /* Assets.xcassets in Resources */,
 				AE9B8AFD23AAC65600F8F47D /* LaunchScreen.storyboard in Resources */,
-				AE9B8AF123AAC65300F8F47D /* Actions.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,8 +195,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE9B8B0723ABD89700F8F47D /* camera.swift in Sources */,
+				AE9B8B1223AC24FB00F8F47D /* structClothing.swift in Sources */,
+				AE5E0AE923AC334900C9FC54 /* King.swift in Sources */,
+				AE9B8B0C23ABDB9600F8F47D /* Human.swift in Sources */,
+				AE9B8B0923ABD89900F8F47D /* colors.swift in Sources */,
+				AE5E0AE723AC333200C9FC54 /* Squire.swift in Sources */,
+				AE5E0AE323AC32FC00C9FC54 /* Knight.swift in Sources */,
 				AE9B8AF323AAC65300F8F47D /* GameScene.swift in Sources */,
+				AE5E0AF623ADC35300C9FC54 /* clothingClasses.swift in Sources */,
+				AE5E0AF423AC612C00C9FC54 /* Clothing.swift in Sources */,
+				AE9B8B0E23ABDC9B00F8F47D /* Item.swift in Sources */,
 				AE9B8AF523AAC65300F8F47D /* GameViewController.swift in Sources */,
+				AE5E0AE523AC331E00C9FC54 /* Wizard.swift in Sources */,
 				AE9B8AED23AAC65300F8F47D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
