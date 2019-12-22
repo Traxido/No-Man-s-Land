@@ -52,15 +52,6 @@ class GameScene: SKScene {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
-        
-        let shirt = staticClothing.shirts.ivoryShirt
-        let pants = staticClothing.pants.darkPants
-        let sleeves = staticClothing.caucasianSleeves.caucasianSleeveIvory
-        
-        
-        let player = Human.init(Name: "George", Race: "caucasian", Gender: "Male", Shirt: shirt, Pants: pants, Sleeves: sleeves, Accessory: nil, zPos: 1)
-        player.position = CGPoint(x: 0, y: 0)
-        self.addChild(player)
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -68,7 +59,14 @@ class GameScene: SKScene {
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let shirt = staticClothing.shirts.ivoryShirt
+        let pants = staticClothing.pants.darkPants
+        let sleeves = staticClothing.caucasianSleeves.caucasianSleeveIvory
         
+        
+        let player = Human.init(Name: "George", Race: "caucasian", Gender: "Male", pShirt: redShirt, pPants: Pants(), pSleeves: Sleeves(), pAccessory: nil, zPos: 1)
+        player.position = CGPoint(x: 0, y: 0)
+        self.addChild(player)
     }
     
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {

@@ -14,19 +14,27 @@ class Human: SKSpriteNode {
     let originalSize = CGSize(width: 64, height: 64)
     var startingZPos: CGFloat?
     
-    var head = Head()
-    var sleeves = Sleeves()
-    var shirt = Shirt()
-    var pants = Pants()
-    var accessory = Clothing()
+    var localHead = Head()
+    var localSleeves = Sleeves()
+    var localShirt = Shirt()
+    var localPants = Pants()
+    var localAccessory = Clothing()
     
-    convenience init(Name: String, Race: String, Gender: String, Shirt: Shirt, Pants: Pants, Sleeves: Sleeves, Accessory: Clothing?, zPos: CGFloat) {
+    convenience init(Name: String, Race: String, Gender: String, pShirt: Shirt, pPants: Pants, pSleeves: Sleeves, pAccessory: Clothing?, zPos: CGFloat) {
         self.init()
         
         self.zPosition = zPos
         self.nickName = Name
         self.race = Race
         self.gender = Gender
+        
+        localShirt = pShirt.copy() as! Shirt
+        localShirt.size = originalSize
+        localShirt.position = CGPoint(x: 0, y: 0)
+        self.addChild(localShirt)
+    }
+    
+    func analyzeClothing(clothing: Clothing) {
         
     }
     

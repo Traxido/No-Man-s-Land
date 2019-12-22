@@ -9,13 +9,21 @@
 import UIKit
 import SpriteKit
 
+var redShirt = Shirt.init(staticT: staticClothing.shirts.redShirt, run: nil, attack: nil, idle: nil, death: nil)
+
 class Clothing: SKSpriteNode {
     
-    var iName = String()
+    var staticImage = SKTexture()
     
-    convenience init(imageName: String) {
+    convenience init(staticT: SKTexture, run: [SKTexture]?, attack: [SKTexture]?, idle: [SKTexture]?, death: [SKTexture]?) {
         self.init()
-        iName = imageName
+        staticImage = staticT
+        runningAnimation = run ?? [staticT]
+        attackingAnimation = attack ?? [staticT]
+        idleAnimation = idle ?? [staticT]
+        deathAnimation = death ?? [staticT]
+        
+        self.texture = staticT
     }
         
         var runningAnimation : [SKTexture] = []
@@ -30,16 +38,22 @@ class Clothing: SKSpriteNode {
             switch animation {
             case "run":
                 animate = SKAction.animate(with: runningAnimation, timePerFrame: 0.15)
+            case "attack":
+                animate = SKAction.animate(with: attackingAnimation, timePerFrame: 0.15)
+            case "idle":
+                animate = SKAction.animate(with: idleAnimation, timePerFrame: 0.15)
+            case "die":
+                animate = SKAction.animate(with: deathAnimation, timePerFrame: 0.15)
             default:
                 self.removeAllActions()
-                self.texture = SKTexture.init(imageNamed: iName)
+                self.texture = staticImage
             }
             self.run(.repeatForever(animate))
         }
 }
 
 class Helmet: Clothing {
-    
+    var blockPercentage: CGFloat = 1
 }
 
 class Head: Clothing {
@@ -59,7 +73,7 @@ class LongCoat: Clothing {
 }
 
 class BackPack: Clothing {
-    
+    var capacity = 10
 }
 
 class Shirt: Clothing {
