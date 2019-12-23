@@ -10,5 +10,6 @@ import UIKit
 import SpriteKit
 
 class King: Human {
-
+    var men: [Human] = []
+    
 }

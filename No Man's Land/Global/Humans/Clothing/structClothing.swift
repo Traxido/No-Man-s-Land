@@ -10,72 +10,73 @@ import Foundation
 import UIKit
 import SpriteKit
 
-var allHelmets : [String] = []
-
 struct staticClothing {
     struct hats {
-        static let wizardHat: SKTexture = SKTexture.init(imageNamed: "")
-        static let helmet0: SKTexture = SKTexture.init(imageNamed: "")
-        static let helmet1: SKTexture = SKTexture.init(imageNamed: "")
-        static let helmet2: SKTexture = SKTexture.init(imageNamed: "")
-        static let helmet3: SKTexture = SKTexture.init(imageNamed: "")
-        static let helmet4: SKTexture = SKTexture.init(imageNamed: "")
-        static let helmet5: SKTexture = SKTexture.init(imageNamed: "")
-        static let helmet6: SKTexture = SKTexture.init(imageNamed: "")
+        static let wizardHat: SKTexture = SKTexture.init(imageNamed: "wizardHat")
+        static let leatherHelmet: SKTexture = SKTexture.init(imageNamed: "leatherHelmet")
+        static let ironHelmet1: SKTexture = SKTexture.init(imageNamed: "ironHelmet1")
+        static let ironHelmet2: SKTexture = SKTexture.init(imageNamed: "ironHelmet2")
+        static let ironHelmet3: SKTexture = SKTexture.init(imageNamed: "ironHelmet3")
+        static let ironHelmet4: SKTexture = SKTexture.init(imageNamed: "ironHelmet4")
+        static let ironHelmet5: SKTexture = SKTexture.init(imageNamed: "ironHelmet5")
+        static let ironHelmet6: SKTexture = SKTexture.init(imageNamed: "ironHelmet6")
     }
     
     struct heads {
-        static let maleCaucasian: SKTexture = SKTexture.init(imageNamed: "")
-        static let femaleCaucasian: SKTexture = SKTexture.init(imageNamed: "")
-        static let maleAfricanAmerican: SKTexture = SKTexture.init(imageNamed: "")
-        static let femaleAfricanAmerican: SKTexture = SKTexture.init(imageNamed: "")
+        static let maleCaucasian: SKTexture = SKTexture.init(imageNamed: "caucasianMaleHead")
+        static let femaleCaucasian: SKTexture = SKTexture.init(imageNamed: "caucasianFemaleHead")
+        static let maleAfricanAmerican: SKTexture = SKTexture.init(imageNamed: "africanAmericanMaleHead")
+        static let femaleAfricanAmerican: SKTexture = SKTexture.init(imageNamed: "africanAmericanFemaleHead")
     }
     
     struct AfricanAmericanSleeves {
-        static let africanAmericanSleeveDarkBrown: SKTexture = SKTexture.init(imageNamed: "")
-        static let africanAmericanSleeveIvory: SKTexture = SKTexture.init(imageNamed: "")
-        static let africanAmericanSleeveLightBrown: SKTexture = SKTexture.init(imageNamed: "")
-        static let africanAmericanSleeveLightRed: SKTexture = SKTexture.init(imageNamed: "")
-        static let africanAmericanSleeveMetal: SKTexture = SKTexture.init(imageNamed: "")
-        static let africanAmericanSleevePurple: SKTexture = SKTexture.init(imageNamed: "")
+        static let africanAmericanSleeveDarkBrown: SKTexture = SKTexture.init(imageNamed: "africanAmericanSleeveDarkBrown")
+        static let africanAmericanSleeveIvory: SKTexture = SKTexture.init(imageNamed: "affricanAmericanSleeveIvory")
+        static let africanAmericanSleeveLightBrown: SKTexture = SKTexture.init(imageNamed: "africanAmericanSleeveLightBrown")
+        static let africanAmericanSleeveLightRed: SKTexture = SKTexture.init(imageNamed: "africanAmericanSleeveLightRed")
+        static let africanAmericanSleeveMetal: SKTexture = SKTexture.init(imageNamed: "africanAmericanSleeveMetal")
+        static let africanAmericanSleevePurple: SKTexture = SKTexture.init(imageNamed: "africanAmericanSleevePurple")
     }
     
     struct caucasianSleeves {
-        static let caucasianSleeveDarkBrown: SKTexture = SKTexture.init(imageNamed: "")
-        static let caucasianSleeveIvory: SKTexture = SKTexture.init(imageNamed: "")
-        static let caucasianSleeveLightBrown: SKTexture = SKTexture.init(imageNamed: "")
-        static let caucasianSleeveLightRed: SKTexture = SKTexture.init(imageNamed: "")
-        static let caucasianSleeveMetal: SKTexture = SKTexture.init(imageNamed: "")
-        static let caucasianSleevePurple: SKTexture = SKTexture.init(imageNamed: "")
+        static let caucasianSleeveDarkBrown: SKTexture = SKTexture.init(imageNamed: "caucasianSleeveDarkBrown")
+        static let caucasianSleeveIvory: SKTexture = SKTexture.init(imageNamed: "caucasianSleeveIvory")
+        static let caucasianSleeveLightBrown: SKTexture = SKTexture.init(imageNamed: "caucasianSleeveLightBrown")
+        static let caucasianSleeveLightRed: SKTexture = SKTexture.init(imageNamed: "caucasianSleeveLightRed")
+        static let caucasianSleeveMetal: SKTexture = SKTexture.init(imageNamed: "caucasianSleeveMetal")
+        static let caucasianSleevePurple: SKTexture = SKTexture.init(imageNamed: "caucasianSleevePurple")
     }
     
     struct accessories {
-        static let backpack: SKTexture = SKTexture.init(imageNamed: "")
+        static let backpack: SKTexture = SKTexture.init(imageNamed: "backPack")
     }
     
     struct armor {
-        static let armor0: SKTexture = SKTexture.init(imageNamed: "")
+        static let ironArmor1: SKTexture = SKTexture.init(imageNamed: "ironArmor1")
     }
     
     struct longCoats {
-        static let redOverCoat: SKTexture = SKTexture.init(imageNamed: "")
+        static let redOverCoat: SKTexture = SKTexture.init(imageNamed: "redOverCoat")
+        static let greenOverCoat: SKTexture = SKTexture.init(imageNamed: "greenOverCoat")
+        static let brownOverCoat: SKTexture = SKTexture.init(imageNamed: "brownOverCoat")
+        static let purpleOverCoat: SKTexture = SKTexture.init(imageNamed: "purpleOverCoat")
     }
     
     struct shirts {
-        static let ivoryShirt: SKTexture = SKTexture.init(imageNamed: "")
-        static let darkBrownShirt: SKTexture = SKTexture.init(imageNamed: "")
-        static let lightBrownShirt: SKTexture = SKTexture.init(imageNamed: "")
-        static let offBlackShirt: SKTexture = SKTexture.init(imageNamed: "")
-        static let purpleShirt: SKTexture = SKTexture.init(imageNamed: "")
+        static let ivoryShirt: SKTexture = SKTexture.init(imageNamed: "ivoryShirt")
+        static let darkBrownShirt: SKTexture = SKTexture.init(imageNamed: "darkBrownShirt")
+        static let lightBrownShirt: SKTexture = SKTexture.init(imageNamed: "lightBrownShirt")
+        static let offBlackShirt: SKTexture = SKTexture.init(imageNamed: "offBlackShirt")
+        static let purpleShirt: SKTexture = SKTexture.init(imageNamed: "purpleShirt")
         static let redShirt: SKTexture = SKTexture.init(imageNamed: "redShirt")
     }
     
     struct pants {
-        static let brownPants: SKTexture = SKTexture.init(imageNamed: "")
-        static let darkPants: SKTexture = SKTexture.init(imageNamed: "")
-        static let lightPants: SKTexture = SKTexture.init(imageNamed: "")
-        static let africanAmericanPants: SKTexture = SKTexture.init(imageNamed: "")
-        static let caucasianPants: SKTexture = SKTexture.init(imageNamed: "")
+        static let brownPants: SKTexture = SKTexture.init(imageNamed: "brownPants")
+        static let darkPants: SKTexture = SKTexture.init(imageNamed: "darkPants")
+        static let lightPants: SKTexture = SKTexture.init(imageNamed: "lightPants")
+        static let africanAmericanPants: SKTexture = SKTexture.init(imageNamed: "africanAmericanPants")
+        static let caucasianPants: SKTexture = SKTexture.init(imageNamed: "caucasianPants")
     }
 }
 

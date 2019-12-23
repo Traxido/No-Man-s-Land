@@ -9,27 +9,31 @@
 import UIKit
 import SpriteKit
 
-var redShirt = Shirt.init(staticT: staticClothing.shirts.redShirt, run: nil, attack: nil, idle: nil, death: nil)
-
 class Clothing: SKSpriteNode {
     
     var staticImage = SKTexture()
     
-    convenience init(staticT: SKTexture, run: [SKTexture]?, attack: [SKTexture]?, idle: [SKTexture]?, death: [SKTexture]?) {
+    var runningAnimation : [SKTexture] = []
+    var attackingAnimation : [SKTexture] = []
+    var idleAnimation : [SKTexture] = []
+    var deathAnimation : [SKTexture] = []
+    
+    convenience init(staticT: SKTexture) {
         self.init()
         staticImage = staticT
-        runningAnimation = run ?? [staticT]
-        attackingAnimation = attack ?? [staticT]
-        idleAnimation = idle ?? [staticT]
-        deathAnimation = death ?? [staticT]
+        
+        
+        for i in 0...4 {
+            runningAnimation.append(SKTexture.init(imageNamed: "\(staticT)Running\(i)"))
+            attackingAnimation.append(SKTexture.init(imageNamed: "\(staticT)attack\(i)"))
+            idleAnimation.append(SKTexture.init(imageNamed: "\(staticT)idle\(i)"))
+            deathAnimation.append(SKTexture.init(imageNamed: "\(staticT)dying\(i)"))
+            print("Setting Up Animations for \(staticT)")
+        }
+        print(runningAnimation)
         
         self.texture = staticT
     }
-        
-        var runningAnimation : [SKTexture] = []
-        var attackingAnimation : [SKTexture] = []
-        var idleAnimation : [SKTexture] = []
-        var deathAnimation : [SKTexture] = []
         
         func animate(animation: String) {
             

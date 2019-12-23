@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE118F9423B02D8B0025B732 /* Shield.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE118F9323B02D8B0025B732 /* Shield.swift */; };
+		AE118F9723B02DA90025B732 /* Weapon.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE118F9623B02DA90025B732 /* Weapon.swift */; };
+		AE118F9923B07F620025B732 /* Tool.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE118F9823B07F620025B732 /* Tool.swift */; };
 		AE5E0AE323AC32FC00C9FC54 /* Knight.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5E0AE223AC32FC00C9FC54 /* Knight.swift */; };
 		AE5E0AE523AC331E00C9FC54 /* Wizard.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5E0AE423AC331E00C9FC54 /* Wizard.swift */; };
 		AE5E0AE723AC333200C9FC54 /* Squire.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5E0AE623AC333200C9FC54 /* Squire.swift */; };
@@ -27,6 +30,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AE118F9323B02D8B0025B732 /* Shield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shield.swift; sourceTree = "<group>"; };
+		AE118F9623B02DA90025B732 /* Weapon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weapon.swift; sourceTree = "<group>"; };
+		AE118F9823B07F620025B732 /* Tool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tool.swift; sourceTree = "<group>"; };
 		AE5E0AE223AC32FC00C9FC54 /* Knight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Knight.swift; sourceTree = "<group>"; };
 		AE5E0AE423AC331E00C9FC54 /* Wizard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wizard.swift; sourceTree = "<group>"; };
 		AE5E0AE623AC333200C9FC54 /* Squire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Squire.swift; sourceTree = "<group>"; };
@@ -59,11 +65,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AE118F9523B02D930025B732 /* Hand Held */ = {
+			isa = PBXGroup;
+			children = (
+				AE118F9323B02D8B0025B732 /* Shield.swift */,
+				AE118F9623B02DA90025B732 /* Weapon.swift */,
+				AE118F9823B07F620025B732 /* Tool.swift */,
+			);
+			path = "Hand Held";
+			sourceTree = "<group>";
+		};
 		AE5E0AEA23AC604600C9FC54 /* Clothing */ = {
 			isa = PBXGroup;
 			children = (
-				AE9B8B1123AC24FB00F8F47D /* structClothing.swift */,
 				AE5E0AF323AC612C00C9FC54 /* Clothing.swift */,
+				AE9B8B1123AC24FB00F8F47D /* structClothing.swift */,
 				AE5E0AF523ADC35300C9FC54 /* clothingClasses.swift */,
 			);
 			path = Clothing;
@@ -115,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				AE5E0AEA23AC604600C9FC54 /* Clothing */,
+				AE118F9523B02D930025B732 /* Hand Held */,
 				AE9B8B0B23ABDB9600F8F47D /* Human.swift */,
 				AE5E0AE223AC32FC00C9FC54 /* Knight.swift */,
 				AE5E0AE423AC331E00C9FC54 /* Wizard.swift */,
@@ -196,9 +213,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE9B8B0723ABD89700F8F47D /* camera.swift in Sources */,
+				AE118F9423B02D8B0025B732 /* Shield.swift in Sources */,
+				AE118F9923B07F620025B732 /* Tool.swift in Sources */,
 				AE9B8B1223AC24FB00F8F47D /* structClothing.swift in Sources */,
 				AE5E0AE923AC334900C9FC54 /* King.swift in Sources */,
 				AE9B8B0C23ABDB9600F8F47D /* Human.swift in Sources */,
+				AE118F9723B02DA90025B732 /* Weapon.swift in Sources */,
 				AE9B8B0923ABD89900F8F47D /* colors.swift in Sources */,
 				AE5E0AE723AC333200C9FC54 /* Squire.swift in Sources */,
 				AE5E0AE323AC32FC00C9FC54 /* Knight.swift in Sources */,

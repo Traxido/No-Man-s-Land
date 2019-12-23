@@ -10,5 +10,5 @@ import UIKit
 import SpriteKit
 
 class Squire: Human {
-
+    
 }

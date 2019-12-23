@@ -1,14 +1,14 @@
 //
-//  Wizard.swift
+//  Tool.swift
 //  No Man's Land
 //
-//  Created by Andrew Sheron on 12/19/19.
+//  Created by Andrew Sheron on 12/22/19.
 //  Copyright © 2019 Andrew Sheron. All rights reserved.
 //
 
 import UIKit
 import SpriteKit
 
-class Wizard: Human {
-    
+class Tool: SKSpriteNode {
+    var type = String()
 }

@@ -10,5 +10,6 @@ import UIKit
 import SpriteKit
 
 class Knight: Human {
-    
+    var shield : Shield?
+    var weapon : Weapon?
 }

@@ -14,6 +14,8 @@ class GameScene: SKScene {
     let cameraNode: Camera!
     let gameLayer: SKNode!
     
+    var player = Human()
+    
     override init(size: CGSize) {
         gameLayer = SKNode()
         gameLayer.position = CGPoint(x: 0, y: 0)
@@ -34,7 +36,9 @@ class GameScene: SKScene {
     }
     
     override func didMove(to view: SKView) {
-        
+        player = Human.init(Name: "George", Race: "caucasian", Gender: "Male", pShirt: ivoryShirt, pPants: brownPants, pSleeves: caucasianSleeveIvory, zPos: 1)
+        player.position = cameraNode.position
+        self.addChild(player)
     }
     
     
@@ -59,19 +63,44 @@ class GameScene: SKScene {
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        let shirt = staticClothing.shirts.ivoryShirt
-        let pants = staticClothing.pants.darkPants
-        let sleeves = staticClothing.caucasianSleeves.caucasianSleeveIvory
         
-        
-        let player = Human.init(Name: "George", Race: "caucasian", Gender: "Male", pShirt: redShirt, pPants: Pants(), pSleeves: Sleeves(), pAccessory: nil, zPos: 1)
-        player.position = CGPoint(x: 0, y: 0)
-        self.addChild(player)
+        for touch in (touches) {
+            let location = touch.location(in: self)
+            let targetNode = atPoint(location)
+            
+            player.move(location)
+        }
     }
     
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
         
     }
+    
+    func getRandomTool() {
+        
+    }
+    
+    func getRandomWeapon() {
+        
+    }
+    
+    func getRandomShirt() -> Shirt {
+        let i = Int(arc4random_uniform(UInt32(allShirts.count)))
+        let shirt = allShirts[i]
+        return shirt.copy() as! Shirt
+    }
+    
+    func getRandomPants() -> Pants {
+        let i = Int(arc4random_uniform(UInt32(allPants.count)))
+        let pants = allShirts[i]
+        return pants.copy() as! Pants
+    }
+    
+    func getRandom() {
+        
+    }
+    
+    
     
     
     override func update(_ currentTime: TimeInterval) {
