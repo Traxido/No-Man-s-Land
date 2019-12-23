@@ -18,42 +18,38 @@ class Clothing: SKSpriteNode {
     var idleAnimation : [SKTexture] = []
     var deathAnimation : [SKTexture] = []
     
-    convenience init(staticT: SKTexture) {
+    convenience init(image: String) {
         self.init()
-        staticImage = staticT
+        staticImage = SKTexture.init(imageNamed: image)
         
-        
-        for i in 0...4 {
-            runningAnimation.append(SKTexture.init(imageNamed: "\(staticT)Running\(i)"))
-            attackingAnimation.append(SKTexture.init(imageNamed: "\(staticT)attack\(i)"))
-            idleAnimation.append(SKTexture.init(imageNamed: "\(staticT)idle\(i)"))
-            deathAnimation.append(SKTexture.init(imageNamed: "\(staticT)dying\(i)"))
-            print("Setting Up Animations for \(staticT)")
+        for i in 0...3 {
+            runningAnimation.append(SKTexture.init(imageNamed: "\(image)Running\(i)"))
+            //            attackingAnimation.append(SKTexture.init(imageNamed: "\(image)attack\(i)"))
+            //            idleAnimation.append(SKTexture.init(imageNamed: "\(image)idle\(i)"))
+            //            deathAnimation.append(SKTexture.init(imageNamed: "\(image)dying\(i)"))
         }
         print(runningAnimation)
-        
-        self.texture = staticT
+        self.texture = staticImage
     }
+    
+    func animate(animation: String) {
+        var animate = SKAction()
         
-        func animate(animation: String) {
-            
-            var animate = SKAction()
-            
-            switch animation {
-            case "run":
-                animate = SKAction.animate(with: runningAnimation, timePerFrame: 0.15)
-            case "attack":
-                animate = SKAction.animate(with: attackingAnimation, timePerFrame: 0.15)
-            case "idle":
-                animate = SKAction.animate(with: idleAnimation, timePerFrame: 0.15)
-            case "die":
-                animate = SKAction.animate(with: deathAnimation, timePerFrame: 0.15)
-            default:
-                self.removeAllActions()
-                self.texture = staticImage
-            }
+        if animation == "run" {
+            print(runningAnimation)
+            animate = SKAction.animate(with: runningAnimation, timePerFrame: 0.15)
             self.run(.repeatForever(animate))
+        } else if animation == "attack" {
+            animate = SKAction.animate(with: attackingAnimation, timePerFrame: 0.15)
+            self.run(.repeatForever(animate))
+        } else if animation == "death" {
+            animate = SKAction.animate(with: deathAnimation, timePerFrame: 0.15)
+            self.run(.repeatForever(animate))
+        } else if animation == "idle" {
+            self.removeAllActions()
+            self.texture = staticImage
         }
+    }
 }
 
 class Helmet: Clothing {

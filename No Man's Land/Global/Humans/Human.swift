@@ -11,8 +11,14 @@ import SpriteKit
 
 class Human: SKSpriteNode {
     
+    var moveRandom: Timer? = nil
+    var lookAround: Timer? = nil
+    var reverseLookAround: Timer? = nil
+    
     let originalSize = CGSize(width: 32, height: 32)
     var startingZPos: CGFloat?
+    
+    var metabolism = TimeInterval()
     
     var localHead = Head()
     var localSleeves = Sleeves()
@@ -29,33 +35,45 @@ class Human: SKSpriteNode {
     var gender : String?
     var willPickUp: [Item] = []
     
+    var isMoving = false
+    
     convenience init(Name: String, Race: String, Gender: String, pShirt: Shirt, pPants: Pants, pSleeves: Sleeves, zPos: CGFloat) {
         self.init()
+        
+        var randM = Int(arc4random_uniform(5))
+        metabolism = TimeInterval(3 + randM)
+        
+        self.moveRandom = Timer.scheduledTimer(timeInterval: metabolism, target: self, selector: #selector(moveRandomly), userInfo: nil, repeats: true)
         
         self.zPosition = zPos
         self.nickName = Name
         self.race = Race
         self.gender = Gender
         
-        localHead = Head.init(staticT: SKTexture.init(imageNamed: "\(Race)\(Gender)Head"))
+        localHead = Head.init(image: "\(Race)\(Gender)Head")
         localHead.size = originalSize
         localHead.position = CGPoint(x: 0, y: 0)
         localHead.zPosition = zPos + 5
         self.addChild(localHead)
         
         localSleeves = pSleeves.copy() as! Sleeves
+        localSleeves.runningAnimation = pSleeves.runningAnimation
+        localSleeves.staticImage = pSleeves.staticImage
         localSleeves.size = originalSize
         localSleeves.position = CGPoint(x: 0, y: 0)
         localSleeves.zPosition = zPos + 4
         self.addChild(localSleeves)
         
         localShirt = pShirt.copy() as! Shirt
+        localShirt.staticImage = pShirt.staticImage
         localShirt.size = originalSize
         localShirt.position = CGPoint(x: 0, y: 0)
         localShirt.zPosition = zPos + 2
         self.addChild(localShirt)
         
         localPants = pPants.copy() as! Pants
+        localPants.runningAnimation = pPants.runningAnimation
+        localPants.staticImage = pPants.staticImage
         localPants.size = originalSize
         localPants.position = CGPoint(x: 0, y: 0)
         localPants.zPosition = zPos + 1
@@ -83,9 +101,46 @@ class Human: SKSpriteNode {
         
     }
     
+    @objc func moveRandomly() {
+        if isMoving == false {
+            var randX = Int(arc4random_uniform(100))
+            var randY = Int(arc4random_uniform(100))
+            
+            let randNegX = Int(arc4random_uniform(2))
+            let randNegY = Int(arc4random_uniform(2))
+            
+            if randNegX == 0 {
+                //Negative X
+                randX *= -1
+            }
+            if randNegY == 0 {
+                //Negative Y
+                randY *= -1
+            }
+            
+            self.move(CGPoint(x: (self.position.x + CGFloat(randX)), y: (self.position.y + CGFloat(randY))))
+        }
+    }
+    
+    @objc func headLookAround() {
+        if isMoving == false {
+            let rand = Int(arc4random_uniform(3))
+            if rand == 0 {
+                localHead.xScale = abs(self.xScale) * -1
+                self.reverseLookAround = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(headNormal), userInfo: nil, repeats: false)
+            }
+        }
+    }
+    
+    @objc func headNormal() {
+        localHead.xScale = abs(self.xScale) * 1
+    }
+    
     func move(_ point: CGPoint) {
+        self.removeAllActions()
+        headNormal()
+        isMoving = true
         localHead.animate(animation: "run")
-        localShirt.animate(animation: "run")
         localSleeves.animate(animation: "run")
         localPants.animate(animation: "run")
         
@@ -106,9 +161,11 @@ class Human: SKSpriteNode {
     
     func idle() {
         self.removeAllActions()
-        localHead.removeAllActions()
-        localShirt.removeAllActions()
-        localSleeves.removeAllActions()
-        localPants.removeAllActions()
+        isMoving = false
+        localHead.animate(animation: "idle")
+        localSleeves.animate(animation: "idle")
+        localPants.animate(animation: "idle")
+        localShirt.animate(animation: "idle")
+        self.lookAround = Timer.scheduledTimer(timeInterval: metabolism/2, target: self, selector: #selector(headLookAround), userInfo: nil, repeats: false)
     }
 }

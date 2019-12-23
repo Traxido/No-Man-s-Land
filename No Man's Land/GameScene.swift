@@ -36,9 +36,12 @@ class GameScene: SKScene {
     }
     
     override func didMove(to view: SKView) {
-        player = Human.init(Name: "George", Race: "caucasian", Gender: "Male", pShirt: ivoryShirt, pPants: brownPants, pSleeves: caucasianSleeveIvory, zPos: 1)
-        player.position = cameraNode.position
-        self.addChild(player)
+        
+        for _ in 0...22 {
+            player = Human.init(Name: "George", Race: "caucasian", Gender: "Male", pShirt: ivoryShirt, pPants: brownPants, pSleeves: caucasianSleeveIvory, zPos: 1)
+            player.position = cameraNode.position
+            self.addChild(player)
+        }
     }
     
     
@@ -63,11 +66,10 @@ class GameScene: SKScene {
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
         for touch in (touches) {
             let location = touch.location(in: self)
             let targetNode = atPoint(location)
-            
+            print("touch")
             player.move(location)
         }
     }
@@ -94,10 +96,6 @@ class GameScene: SKScene {
         let i = Int(arc4random_uniform(UInt32(allPants.count)))
         let pants = allShirts[i]
         return pants.copy() as! Pants
-    }
-    
-    func getRandom() {
-        
     }
     
     
