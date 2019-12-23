@@ -40,7 +40,8 @@ class Human: SKSpriteNode {
     convenience init(Name: String, Race: String, Gender: String, pShirt: Shirt, pPants: Pants, pSleeves: Sleeves, zPos: CGFloat) {
         self.init()
         
-        var randM = Int(arc4random_uniform(5))
+        let randM = TimeInterval(arc4random_uniform(500))/100
+        print("Metabolism Rate: \(randM)")
         metabolism = TimeInterval(3 + randM)
         
         self.moveRandom = Timer.scheduledTimer(timeInterval: metabolism, target: self, selector: #selector(moveRandomly), userInfo: nil, repeats: true)
