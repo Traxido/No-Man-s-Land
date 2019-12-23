@@ -41,9 +41,7 @@ class Human: SKSpriteNode {
         self.init()
         
         let randM = TimeInterval(arc4random_uniform(500))/100
-        print("Metabolism Rate: \(randM)")
         metabolism = TimeInterval(3 + randM)
-        
         self.moveRandom = Timer.scheduledTimer(timeInterval: metabolism, target: self, selector: #selector(moveRandomly), userInfo: nil, repeats: true)
         
         self.zPosition = zPos
@@ -104,6 +102,10 @@ class Human: SKSpriteNode {
     
     @objc func moveRandomly() {
         if isMoving == false {
+            let moveYN = Int(arc4random_uniform(1))
+            
+            if moveYN == 0 {
+            
             var randX = Int(arc4random_uniform(100))
             var randY = Int(arc4random_uniform(100))
             
@@ -118,8 +120,8 @@ class Human: SKSpriteNode {
                 //Negative Y
                 randY *= -1
             }
-            
             self.move(CGPoint(x: (self.position.x + CGFloat(randX)), y: (self.position.y + CGFloat(randY))))
+        }
         }
     }
     
