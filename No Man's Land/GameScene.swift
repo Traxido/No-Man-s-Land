@@ -38,7 +38,10 @@ class GameScene: SKScene {
     override func didMove(to view: SKView) {
         
         for _ in 0...22 {
-            player = Human.init(Name: "George", Race: "caucasian", Gender: "Male", pShirt: ivoryShirt, pPants: brownPants, pSleeves: caucasianSleeveIvory, zPos: 1)
+            
+            let rShirt = getRandomShirt()
+            
+            player = Human.init(Name: "George", Race: "caucasian", Gender: "Male", pShirt: rShirt, pPants: brownPants, pSleeves: caucasianSleeveIvory, zPos: 1)
             player.position = cameraNode.position
             self.addChild(player)
         }
@@ -88,8 +91,10 @@ class GameScene: SKScene {
     
     func getRandomShirt() -> Shirt {
         let i = Int(arc4random_uniform(UInt32(allShirts.count)))
-        let shirt = allShirts[i]
-        return shirt.copy() as! Shirt
+        let shirtt = allShirts[i]
+        let localShirt = shirtt.copy() as! Shirt
+        localShirt.staticImage = shirtt.staticImage
+        return localShirt
     }
     
     func getRandomPants() -> Pants {
