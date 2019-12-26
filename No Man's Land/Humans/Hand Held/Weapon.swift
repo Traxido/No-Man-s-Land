@@ -51,5 +51,5 @@ class Weapon: SKSpriteNode {
     }
 }
 
-var sword = Weapon.init(image: "ironSword", damage: 10)
+var ironSword = Weapon.init(image: "ironSword", damage: 10)
 var warHammer = Weapon.init(image: "warHammer", damage: 25)
