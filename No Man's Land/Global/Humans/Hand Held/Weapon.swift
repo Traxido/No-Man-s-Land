@@ -10,5 +10,39 @@ import UIKit
 import SpriteKit
 
 class Weapon: SKSpriteNode {
-
+    var weaponDamage = Int()
+    var swingAnimation : [SKTexture] = []
+    var runningAnimation : [SKTexture] = []
+    var staticImage : SKTexture = SKTexture()
+    
+    convenience init(image: String, damage: Int) {
+        self.init()
+        staticImage = SKTexture.init(imageNamed: image)
+        self.texture = staticImage
+        weaponDamage = damage
+        
+        for i in 0...3 {
+            runningAnimation.append(SKTexture.init(imageNamed: "\(image)Running\(i)"))
+            swingAnimation.append(SKTexture.init(imageNamed: "\(image)Attack\(i)"))
+        }
+    }
+    
+    func animate(animation: String) {
+        
+        var animate = SKAction()
+        
+        if animation == "attack" && swingAnimation != [] {
+            animate = SKAction.animate(with: swingAnimation, timePerFrame: 0.15)
+            self.run(animate)
+        } else if animation == "run" && runningAnimation != []  {
+            animate = SKAction.animate(with: runningAnimation, timePerFrame: 0.15)
+            self.run(.repeatForever(animate))
+        } else if animation == "idle" {
+            self.removeAllActions()
+            self.texture = staticImage
+        }
+        
+    }
 }
+
+var sword = Weapon.init(image: "ironSword", damage: 10)

@@ -10,5 +10,8 @@ import UIKit
 import SpriteKit
 
 class Shield: SKSpriteNode {
-    
+    var chanceOfNoHit = 1
+//    override func copy(with zone: NSZone? = nil) -> Any {
+//        <#code#>
+//    }
 }

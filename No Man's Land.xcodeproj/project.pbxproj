@@ -10,9 +10,11 @@
 		AE118F9423B02D8B0025B732 /* Shield.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE118F9323B02D8B0025B732 /* Shield.swift */; };
 		AE118F9723B02DA90025B732 /* Weapon.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE118F9623B02DA90025B732 /* Weapon.swift */; };
 		AE118F9923B07F620025B732 /* Tool.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE118F9823B07F620025B732 /* Tool.swift */; };
-		AE5E0AE323AC32FC00C9FC54 /* Knight.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5E0AE223AC32FC00C9FC54 /* Knight.swift */; };
-		AE5E0AE523AC331E00C9FC54 /* Wizard.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5E0AE423AC331E00C9FC54 /* Wizard.swift */; };
-		AE5E0AE723AC333200C9FC54 /* Squire.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5E0AE623AC333200C9FC54 /* Squire.swift */; };
+		AE118F9C23B1B2650025B732 /* fireBlast.sks in Resources */ = {isa = PBXBuildFile; fileRef = AE118F9A23B1B2650025B732 /* fireBlast.sks */; };
+		AE118F9D23B1B2650025B732 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE118F9B23B1B2650025B732 /* Assets.xcassets */; };
+		AE118F9F23B1B4610025B732 /* Fire.sks in Resources */ = {isa = PBXBuildFile; fileRef = AE118F9E23B1B4610025B732 /* Fire.sks */; };
+		AE118FA523B1B6770025B732 /* smoke.sks in Resources */ = {isa = PBXBuildFile; fileRef = AE118FA323B1B6760025B732 /* smoke.sks */; };
+		AE2A07B523B549B60053D972 /* humanRules.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2A07B423B549B60053D972 /* humanRules.swift */; };
 		AE5E0AE923AC334900C9FC54 /* King.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5E0AE823AC334900C9FC54 /* King.swift */; };
 		AE5E0AF423AC612C00C9FC54 /* Clothing.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5E0AF323AC612C00C9FC54 /* Clothing.swift */; };
 		AE5E0AF623ADC35300C9FC54 /* clothingClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5E0AF523ADC35300C9FC54 /* clothingClasses.swift */; };
@@ -26,16 +28,17 @@
 		AE9B8B0923ABD89900F8F47D /* colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9B8B0823ABD89900F8F47D /* colors.swift */; };
 		AE9B8B0C23ABDB9600F8F47D /* Human.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9B8B0B23ABDB9600F8F47D /* Human.swift */; };
 		AE9B8B0E23ABDC9B00F8F47D /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9B8B0D23ABDC9B00F8F47D /* Item.swift */; };
-		AE9B8B1223AC24FB00F8F47D /* structClothing.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9B8B1123AC24FB00F8F47D /* structClothing.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AE118F9323B02D8B0025B732 /* Shield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shield.swift; sourceTree = "<group>"; };
 		AE118F9623B02DA90025B732 /* Weapon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weapon.swift; sourceTree = "<group>"; };
 		AE118F9823B07F620025B732 /* Tool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tool.swift; sourceTree = "<group>"; };
-		AE5E0AE223AC32FC00C9FC54 /* Knight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Knight.swift; sourceTree = "<group>"; };
-		AE5E0AE423AC331E00C9FC54 /* Wizard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wizard.swift; sourceTree = "<group>"; };
-		AE5E0AE623AC333200C9FC54 /* Squire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Squire.swift; sourceTree = "<group>"; };
+		AE118F9A23B1B2650025B732 /* fireBlast.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = fireBlast.sks; sourceTree = "<group>"; };
+		AE118F9B23B1B2650025B732 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AE118F9E23B1B4610025B732 /* Fire.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Fire.sks; sourceTree = "<group>"; };
+		AE118FA323B1B6760025B732 /* smoke.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = smoke.sks; sourceTree = "<group>"; };
+		AE2A07B423B549B60053D972 /* humanRules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = humanRules.swift; sourceTree = "<group>"; };
 		AE5E0AE823AC334900C9FC54 /* King.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = King.swift; sourceTree = "<group>"; };
 		AE5E0AF323AC612C00C9FC54 /* Clothing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clothing.swift; sourceTree = "<group>"; };
 		AE5E0AF523ADC35300C9FC54 /* clothingClasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = clothingClasses.swift; sourceTree = "<group>"; };
@@ -51,7 +54,6 @@
 		AE9B8B0823ABD89900F8F47D /* colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = colors.swift; sourceTree = "<group>"; };
 		AE9B8B0B23ABDB9600F8F47D /* Human.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Human.swift; sourceTree = "<group>"; };
 		AE9B8B0D23ABDC9B00F8F47D /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
-		AE9B8B1123AC24FB00F8F47D /* structClothing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = structClothing.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,11 +77,21 @@
 			path = "Hand Held";
 			sourceTree = "<group>";
 		};
+		AE118FA023B1B4670025B732 /* Particles */ = {
+			isa = PBXGroup;
+			children = (
+				AE118F9A23B1B2650025B732 /* fireBlast.sks */,
+				AE118F9E23B1B4610025B732 /* Fire.sks */,
+				AE118FA323B1B6760025B732 /* smoke.sks */,
+				AE118F9B23B1B2650025B732 /* Assets.xcassets */,
+			);
+			path = Particles;
+			sourceTree = "<group>";
+		};
 		AE5E0AEA23AC604600C9FC54 /* Clothing */ = {
 			isa = PBXGroup;
 			children = (
 				AE5E0AF323AC612C00C9FC54 /* Clothing.swift */,
-				AE9B8B1123AC24FB00F8F47D /* structClothing.swift */,
 				AE5E0AF523ADC35300C9FC54 /* clothingClasses.swift */,
 			);
 			path = Clothing;
@@ -122,6 +134,7 @@
 				AE9B8B0623ABD89700F8F47D /* camera.swift */,
 				AE9B8B0823ABD89900F8F47D /* colors.swift */,
 				AE9B8B0D23ABDC9B00F8F47D /* Item.swift */,
+				AE118FA023B1B4670025B732 /* Particles */,
 				AE9B8B1323AC306E00F8F47D /* Humans */,
 			);
 			path = Global;
@@ -130,12 +143,10 @@
 		AE9B8B1323AC306E00F8F47D /* Humans */ = {
 			isa = PBXGroup;
 			children = (
+				AE2A07B423B549B60053D972 /* humanRules.swift */,
 				AE5E0AEA23AC604600C9FC54 /* Clothing */,
 				AE118F9523B02D930025B732 /* Hand Held */,
 				AE9B8B0B23ABDB9600F8F47D /* Human.swift */,
-				AE5E0AE223AC32FC00C9FC54 /* Knight.swift */,
-				AE5E0AE423AC331E00C9FC54 /* Wizard.swift */,
-				AE5E0AE623AC333200C9FC54 /* Squire.swift */,
 				AE5E0AE823AC334900C9FC54 /* King.swift */,
 			);
 			path = Humans;
@@ -199,9 +210,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE118F9C23B1B2650025B732 /* fireBlast.sks in Resources */,
+				AE118F9F23B1B4610025B732 /* Fire.sks in Resources */,
 				AE9B8AF823AAC65300F8F47D /* Main.storyboard in Resources */,
 				AE9B8AFA23AAC65600F8F47D /* Assets.xcassets in Resources */,
 				AE9B8AFD23AAC65600F8F47D /* LaunchScreen.storyboard in Resources */,
+				AE118F9D23B1B2650025B732 /* Assets.xcassets in Resources */,
+				AE118FA523B1B6770025B732 /* smoke.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,20 +230,17 @@
 				AE9B8B0723ABD89700F8F47D /* camera.swift in Sources */,
 				AE118F9423B02D8B0025B732 /* Shield.swift in Sources */,
 				AE118F9923B07F620025B732 /* Tool.swift in Sources */,
-				AE9B8B1223AC24FB00F8F47D /* structClothing.swift in Sources */,
 				AE5E0AE923AC334900C9FC54 /* King.swift in Sources */,
 				AE9B8B0C23ABDB9600F8F47D /* Human.swift in Sources */,
 				AE118F9723B02DA90025B732 /* Weapon.swift in Sources */,
 				AE9B8B0923ABD89900F8F47D /* colors.swift in Sources */,
-				AE5E0AE723AC333200C9FC54 /* Squire.swift in Sources */,
-				AE5E0AE323AC32FC00C9FC54 /* Knight.swift in Sources */,
 				AE9B8AF323AAC65300F8F47D /* GameScene.swift in Sources */,
 				AE5E0AF623ADC35300C9FC54 /* clothingClasses.swift in Sources */,
 				AE5E0AF423AC612C00C9FC54 /* Clothing.swift in Sources */,
 				AE9B8B0E23ABDC9B00F8F47D /* Item.swift in Sources */,
 				AE9B8AF523AAC65300F8F47D /* GameViewController.swift in Sources */,
-				AE5E0AE523AC331E00C9FC54 /* Wizard.swift in Sources */,
 				AE9B8AED23AAC65300F8F47D /* AppDelegate.swift in Sources */,
+				AE2A07B523B549B60053D972 /* humanRules.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,11 +387,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NMV2R8627Y;
 				INFOPLIST_FILE = "No Man's Land/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.AFS.No-Man-s-Land";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.AFS.No-Mans-Land";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -393,11 +406,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NMV2R8627Y;
 				INFOPLIST_FILE = "No Man's Land/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.AFS.No-Man-s-Land";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.AFS.No-Mans-Land";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -37,14 +37,43 @@ class GameScene: SKScene {
     
     override func didMove(to view: SKView) {
         
-        for _ in 0...22 {
-            
-            let rShirt = getRandomShirt()
-            
-            player = Human.init(Name: "George", Race: "caucasian", Gender: "Male", pShirt: rShirt, pPants: brownPants, pSleeves: caucasianSleeveIvory, zPos: 1)
-            player.position = cameraNode.position
-            self.addChild(player)
+        player = Human.init(Name: "Andrew", Race: "caucasian", Gender: "Male", pShirt: getRandomShirt(), pPants: getRandomPants(), pSleeves: getRandomSleeves(race: "caucasian"), zPos: 1)
+        player.knightHuman(random: false, Weapon: nil, Shield: nil, OverCoat: redOverCoat, Armor: ironArmor1, Helmet: ironHelmet6)
+        self.addChild(player)
+        
+        for _ in 0...100 {
+            createRandomPerson()
         }
+    }
+    
+    func createRandomPerson() {
+        var race = String()
+        let r = Int(arc4random_uniform(UInt32(2)))
+        
+        if r == 0 {
+            race = "caucasian"
+        } else {
+            race = "africanAmerican"
+        }
+        
+        var gender = String()
+        let g = Int(arc4random_uniform(UInt32(2)))
+        
+        if g == 0 {
+            gender = "Male"
+        } else {
+            gender = "Female"
+        }
+        
+        var human = Human()
+        let rShirt = getRandomShirt()
+        let rSleeves = getRandomSleeves(race: race)
+        let rPants = getRandomPants()
+        
+        human = Human.init(Name: "George", Race: race, Gender: gender, pShirt: rShirt, pPants: rPants, pSleeves: rSleeves, zPos: 1)
+        human.knightHuman(random: false, Weapon: nil, Shield: nil, OverCoat: redOverCoat, Armor: ironArmor1, Helmet: ironHelmet6)
+        human.position = cameraNode.position
+        self.addChild(human)
     }
     
     
@@ -90,19 +119,35 @@ class GameScene: SKScene {
     }
     
     func getRandomShirt() -> Shirt {
-        let i = Int(arc4random_uniform(UInt32(allShirts.count)))
-        let shirtt = allShirts[i]
+        let i = Int(arc4random_uniform(UInt32(villagerShirts.count)))
+        let shirtt = villagerShirts[i]
         let localShirt = shirtt.copy() as! Shirt
         localShirt.staticImage = shirtt.staticImage
         return localShirt
     }
     
-    func getRandomPants() -> Pants {
-        let i = Int(arc4random_uniform(UInt32(allPants.count)))
-        let pants = allShirts[i]
-        return pants.copy() as! Pants
+    func getRandomSleeves(race: String) -> Sleeves {
+        if race == "caucasian" {
+            let i = Int(arc4random_uniform(UInt32(caucasianVillagerSleeves.count)))
+            let sleevest = caucasianVillagerSleeves[i]
+            let localSleeves = sleevest.copy() as! Sleeves
+            return localSleeves
+        } else if race == "africanAmerican" {
+            let i = Int(arc4random_uniform(UInt32(africanAmericanVillagerSleeves.count)))
+            let sleevest = africanAmericanVillagerSleeves[i]
+            let localSleeves = sleevest.copy() as! Sleeves
+            return localSleeves
+        } else {
+            return Sleeves()
+        }
     }
     
+    func getRandomPants() -> Pants {
+        let i = Int(arc4random_uniform(UInt32(allPants.count)))
+        let pantst = allPants[i]
+        let localPants = pantst.copy() as! Pants
+        return localPants
+    }
     
     
     
