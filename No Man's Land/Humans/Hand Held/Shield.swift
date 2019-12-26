@@ -11,7 +11,7 @@ import SpriteKit
 
 class Shield: SKSpriteNode {
     var imageName = String()
-    var chanceOfNoHit = 1
+    var chanceOfNoHit = 1 //Chance of absorbing hit out of 100
     var staticImage = SKTexture()
     var runningAnimation: [SKTexture] = []
     var blockingAnimation: [SKTexture] = []
@@ -20,6 +20,7 @@ class Shield: SKSpriteNode {
         self.init()
         
         staticImage = SKTexture.init(imageNamed: image)
+        self.texture = staticImage
         imageName = image
         chanceOfNoHit = chance
         
@@ -51,3 +52,6 @@ class Shield: SKSpriteNode {
         return copy
     }
 }
+
+var woodShield = Shield.init(image: "woodShield", chance: 20)
+var ironShield = Shield.init(image: "ironShield", chance: 50)
