@@ -181,6 +181,8 @@ class Human: SKSpriteNode {
         localHead.animate(animation: "run")
         localSleeves.animate(animation: "run")
         localPants.animate(animation: "run")
+        localShield.animate(animation: "run")
+        localWeapon.animate(animation: "run")
         
         var multiplierForDirection = CGFloat()
         let manSpeed = 128
@@ -205,7 +207,7 @@ class Human: SKSpriteNode {
         localSleeves.animate(animation: "idle")
         localPants.animate(animation: "idle")
         localShirt.animate(animation: "idle")
-        
+        localShield.animate(animation: "idle")
         localWeapon.animate(animation: "idle")
         
         self.lookAround = Timer.scheduledTimer(timeInterval: metabolism/2, target: self, selector: #selector(headLookAround), userInfo: nil, repeats: false)
