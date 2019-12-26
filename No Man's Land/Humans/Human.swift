@@ -112,10 +112,10 @@ class Human: SKSpriteNode {
     }
     
     func assignJob(tool: Tool) {
-        if tool.type == "hammer" {
-        } else if tool.type == "axe" {
+        if tool.toolType == "hammer" {
+        } else if tool.toolType == "axe" {
             
-        } else if tool.type == "scythe" {
+        } else if tool.toolType == "scythe" {
             
         }
         update()

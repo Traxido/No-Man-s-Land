@@ -117,6 +117,8 @@
 			isa = PBXGroup;
 			children = (
 				AE9B8B0A23ABD8A900F8F47D /* Global */,
+				AE118FA023B1B4670025B732 /* Particles */,
+				AE9B8B1323AC306E00F8F47D /* Humans */,
 				AE9B8AEC23AAC65300F8F47D /* AppDelegate.swift */,
 				AE9B8AF223AAC65300F8F47D /* GameScene.swift */,
 				AE9B8AF423AAC65300F8F47D /* GameViewController.swift */,
@@ -134,8 +136,6 @@
 				AE9B8B0623ABD89700F8F47D /* camera.swift */,
 				AE9B8B0823ABD89900F8F47D /* colors.swift */,
 				AE9B8B0D23ABDC9B00F8F47D /* Item.swift */,
-				AE118FA023B1B4670025B732 /* Particles */,
-				AE9B8B1323AC306E00F8F47D /* Humans */,
 			);
 			path = Global;
 			sourceTree = "<group>";
@@ -143,9 +143,9 @@
 		AE9B8B1323AC306E00F8F47D /* Humans */ = {
 			isa = PBXGroup;
 			children = (
-				AE2A07B423B549B60053D972 /* humanRules.swift */,
 				AE5E0AEA23AC604600C9FC54 /* Clothing */,
 				AE118F9523B02D930025B732 /* Hand Held */,
+				AE2A07B423B549B60053D972 /* humanRules.swift */,
 				AE9B8B0B23ABDB9600F8F47D /* Human.swift */,
 				AE5E0AE823AC334900C9FC54 /* King.swift */,
 			);
