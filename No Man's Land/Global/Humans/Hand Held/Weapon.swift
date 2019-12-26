@@ -10,6 +10,7 @@ import UIKit
 import SpriteKit
 
 class Weapon: SKSpriteNode {
+    var imageName = String()
     var weaponDamage = Int()
     var swingAnimation : [SKTexture] = []
     var runningAnimation : [SKTexture] = []
@@ -20,6 +21,7 @@ class Weapon: SKSpriteNode {
         staticImage = SKTexture.init(imageNamed: image)
         self.texture = staticImage
         weaponDamage = damage
+        imageName = image
         
         for i in 0...3 {
             runningAnimation.append(SKTexture.init(imageNamed: "\(image)Running\(i)"))
@@ -42,6 +44,11 @@ class Weapon: SKSpriteNode {
             self.texture = staticImage
         }
         
+    }
+    
+    override func copy(with zone: NSZone? = nil) -> Any {
+        let copy = Weapon.init(image: imageName, damage: weaponDamage)
+        return copy
     }
 }
 
