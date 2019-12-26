@@ -34,10 +34,10 @@ class Shield: SKSpriteNode {
         
         var animate = SKAction()
         
-        if animation == "run" {
+        if animation == "run" && runningAnimation != [] {
             animate = SKAction.animate(with: runningAnimation, timePerFrame: 0.15)
             self.run(.repeatForever(animate))
-        } else if animation == "block" {
+        } else if animation == "block" && blockingAnimation != [] {
             animate = SKAction.animate(with: blockingAnimation, timePerFrame: 0.15)
             self.run(.repeatForever(animate))
         } else if animation == "idle" {
