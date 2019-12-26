@@ -77,34 +77,25 @@ class Human: SKSpriteNode {
     func knightHuman(random: Bool, Weapon: Weapon?, Shield: Shield?, OverCoat: Accessory?, Armor: Armor?, Helmet: Helmet?) {
         if let Weapon = Weapon {
             localWeapon = Weapon.copy() as! Weapon
-            localWeapon.weaponDamage = Weapon.weaponDamage
-            localWeapon.staticImage = Weapon.staticImage
-            localWeapon.runningAnimation = Weapon.runningAnimation
-            localWeapon.swingAnimation = Weapon.swingAnimation
             createLayer(layer: localWeapon, zPos: zpos.Weapon)
         }
         if let Shield = Shield {
             localShield = Shield.copy() as! Shield
-            localShield.chanceOfNoHit = Shield.chanceOfNoHit
             createLayer(layer: localShield, zPos: zpos.Shield)
         }
         
         if let OverCoat = OverCoat {
             localAccessory = OverCoat.copy() as! Accessory
-            //createLayer(layer: localAccessory, zPos: zpos.Accessory)
+            createLayer(layer: localAccessory, zPos: zpos.Accessory)
         }
         
         if let Armor = Armor {
             localArmor = Armor.copy() as! Armor
-            localArmor.blockPercentage = Armor.blockPercentage
             createLayer(layer: localArmor, zPos: zpos.Armor)
         }
         
         if let Helmet = Helmet {
             localHelmet = Helmet.copy() as! Helmet
-//            localHelmet.blockPercentage = Helmet.blockPercentage
-//            localHelmet.staticImage = Helmet.staticImage
-//            localHelmet.runningAnimation = Helmet.runningAnimation
             createLayer(layer: localHelmet, zPos: startingZPos + zpos.Hat)
         }
     }
