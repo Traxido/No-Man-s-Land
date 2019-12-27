@@ -9,7 +9,7 @@
 import UIKit
 import SpriteKit
 
-class Human: SKSpriteNode {
+class Human: SKSpriteNode, SKPhysicsContactDelegate {
     
     var moveRandom: Timer? = nil
     var lookAround: Timer? = nil
@@ -20,6 +20,8 @@ class Human: SKSpriteNode {
     var startingZPos = CGFloat()
     
     var metabolism = TimeInterval()
+    var awarenessCircle = SKShapeNode()
+    var awareness = 160
     
     var localHead = Head()
     var localHelmet = Helmet()
@@ -35,16 +37,18 @@ class Human: SKSpriteNode {
     var localWeapon = Weapon()
     var localShield = Shield()
     
-    var nickName : String?
-    var health : Int?
+    var nickName = String()
+    var totalHealth = Int()
+    var health = Int()
     var inventory : [Item] = []
-    var race : String?
-    var gender : String?
+    var inventoryCount = 10
+    var race = String()
+    var gender = String()
     var willPickUp: [Item] = []
     
     var isMoving = false
     
-    convenience init(Name: String, Race: String, Gender: String, pShirt: Shirt, pPants: Pants, pSleeves: Sleeves, zPos: CGFloat) {
+    convenience init(Name: String, Race: String, Gender: String, pShirt: Shirt, pPants: Pants, pSleeves: Sleeves, zPos: CGFloat, player: Bool) {
         self.init()
         
         let randM = TimeInterval(arc4random_uniform(500))/100
@@ -72,8 +76,30 @@ class Human: SKSpriteNode {
         localPants.runningAnimation = pPants.runningAnimation
         localPants.staticImage = pPants.staticImage
         createLayer(layer: localPants, zPos: zpos.Pants)
-    }
-    
+        
+//        awarenessCircle = SKShapeNode.init(circleOfRadius: CGFloat(awareness))
+//        awarenessCircle.position = CGPoint(x: 0, y: 0)
+//        awarenessCircle.zPosition = 0
+//        awarenessCircle.physicsBody = SKPhysicsBody(circleOfRadius: CGFloat(awareness))
+//        awarenessCircle.physicsBody?.affectedByGravity = false
+//        awarenessCircle.physicsBody?.allowsRotation = false
+//
+//        if player == false {
+//            awarenessCircle.physicsBody?.categoryBitMask = physicsCategory.humanAwareness
+//            awarenessCircle.physicsBody?.collisionBitMask = 0
+//            awarenessCircle.physicsBody?.contactTestBitMask = physicsCategory.player
+//            awarenessCircle.name = "humanAwareness"
+//            self.name = "human"
+//        } else if player == true {
+//            awarenessCircle.physicsBody?.categoryBitMask = physicsCategory.playerAwareness
+//            awarenessCircle.physicsBody?.collisionBitMask = 0
+//            awarenessCircle.physicsBody?.contactTestBitMask = physicsCategory.human
+//            awarenessCircle.name = "playerAwareness"
+//            self.name = "player"
+//        }
+//    addChild(awarenessCircle)
+}
+
     func knightHuman(random: Bool, Weapon: Weapon?, Shield: Shield?, OverCoat: Accessory?, Armor: Armor?, Helmet: Helmet?) {
         if let Weapon = Weapon {
             localWeapon = Weapon.copy() as! Weapon
@@ -98,6 +124,7 @@ class Human: SKSpriteNode {
             localHelmet = Helmet.copy() as! Helmet
             createLayer(layer: localHelmet, zPos: startingZPos + zpos.Hat)
         }
+        update()
     }
     
     func createLayer(layer: SKSpriteNode, zPos: CGFloat) {
@@ -127,8 +154,18 @@ class Human: SKSpriteNode {
         item.removeFromParent()
     }
     
-    func update() {
+    func checkDistances() {
         
+    }
+    
+    func update() {
+        totalHealth = (localArmor.health + localHelmet.health + 100)
+        inventoryCount = (localBag.capacity + 10)
+        if localArmor.imageName == ironArmor2.imageName {
+            localSleeves.removeFromParent()
+            localSleeves = armoredSleeves.copy() as! Sleeves
+            createLayer(layer: localSleeves, zPos: zpos.Sleeves)
+        }
     }
     
     @objc func moveRandomly() {
@@ -174,6 +211,7 @@ class Human: SKSpriteNode {
     
     func move(_ point: CGPoint) {
         self.removeAllActions()
+        awarenessCircle.position = CGPoint(x: 0, y: 0)
         headNormal()
         isMoving = true
         

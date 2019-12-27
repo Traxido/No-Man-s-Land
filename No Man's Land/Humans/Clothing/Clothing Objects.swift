@@ -22,7 +22,7 @@ var africanAmericanSleeveLightBrown = Sleeves.init(image: "africanAmericanSleeve
 var africanAmericanSleeveLightRed = Sleeves.init(image: "africanAmericanSleeveLightRed")
 var africanAmericanSleeveMetal = Sleeves.init(image: "africanAmericanSleeveMetal")
 var africanAmericanSleevePurple = Sleeves.init(image: "africanAmericanSleevePurple")
-
+var armoredSleeves = Sleeves.init(image: "armoredSleeve")
 var caucasianSleeveDarkBrown = Sleeves.init(image: "caucasianSleeveDarkBrown")
 var caucasianSleeveIvory = Sleeves.init(image: "caucasianSleeveIvory")
 var caucasianSleeveLightBrown = Sleeves.init(image: "caucasianSleeveLightBrown")
@@ -36,19 +36,19 @@ var lightPants = Pants.init(image: "lightPants")
 var darkPants = Pants.init(image: "darkPants")
 var brownPants = Pants.init(image: "brownPants")
 
-var ironArmor1 = Armor.init(image: "ironArmor1", rating: 8.0) //Blocks 20%
-var ironArmor2 = Armor.init(image: "ironArmor2", rating: 5.0) //Blocks 50%
+var ironArmor1 = Armor.init(image: "ironArmor1", rating: 25)
+var ironArmor2 = Armor.init(image: "ironArmor2", rating: 50)
 
-var leatherHelmet = Helmet.init(image: "leatherHelmet", rating: 0.95)
-var ironHelmet1 = Helmet.init(image: "ironHelmet1", rating: 0.90)
-var ironHelmet2 = Helmet.init(image: "ironHelmet2", rating: 0.85)
-var ironHelmet3 = Helmet.init(image: "ironHelmet3", rating: 0.80)
-var ironHelmet4 = Helmet.init(image: "ironHelmet4", rating: 0.75)
-var ironHelmet5 = Helmet.init(image: "ironHelmet5", rating: 0.70)
-var ironHelmet6 = Helmet.init(image: "ironHelmet6", rating: 0.70)
+var leatherHelmet = Helmet.init(image: "leatherHelmet", rating: 10)
+var ironHelmet1 = Helmet.init(image: "ironHelmet1", rating: 10)
+var ironHelmet2 = Helmet.init(image: "ironHelmet2", rating: 10)
+var ironHelmet3 = Helmet.init(image: "ironHelmet3", rating: 10)
+var ironHelmet4 = Helmet.init(image: "ironHelmet4", rating: 10)
+var ironHelmet5 = Helmet.init(image: "ironHelmet5", rating: 10)
+var ironHelmet6 = Helmet.init(image: "ironHelmet6", rating: 10)
 var wizardHat = Helmet.init(image: "wizardHat")
 
-var backPack = BackPack.init(image: "backPack", holds: 10)
+var backPack = BackPack.init(image: "backPack", holds: 5)
 
 var redOverCoat = Accessory.init(image: "redOverCoat")
 var greenOverCoat = Accessory.init(image: "greenOverCoat")
@@ -59,9 +59,9 @@ var apron = Accessory.init(image: "apron")
 var butchersApron = Accessory.init(image: "apron")
 
 class Helmet: Clothing {
-    var blockPercentage: CGFloat = 1
+    var health: Int = 10
     var wizardAnimation : [SKTexture] = []
-    convenience init(image: String, rating: CGFloat) {
+    convenience init(image: String, rating: Int) {
         self.init()
         staticImage = SKTexture.init(imageNamed: image)
         imageName = image
@@ -72,11 +72,11 @@ class Helmet: Clothing {
                 attackingAnimation.append(SKTexture.init(imageNamed: "\(image)attack\(i)"))
             }
         }
-        blockPercentage = rating
+        health = rating
     }
     
     override func copy(with zone: NSZone? = nil) -> Any {
-        let copy = Helmet.init(image: imageName, rating: blockPercentage)
+        let copy = Helmet.init(image: imageName, rating: health)
         return copy
     }
 }
@@ -95,17 +95,17 @@ class Sleeves: Clothing {
 }
 
 class Armor: Clothing {
-    var blockPercentage: CGFloat = 1
-    convenience init(image: String, rating: CGFloat) {
+    var health: Int = 0
+    convenience init(image: String, rating: Int) {
         self.init()
         staticImage = SKTexture.init(imageNamed: image)
         imageName = image
-        blockPercentage = rating
+        health = rating
         self.texture = staticImage
     }
     
     override func copy(with zone: NSZone? = nil) -> Any {
-        let copy = Armor.init(image: imageName, rating: blockPercentage)
+        let copy = Armor.init(image: imageName, rating: health)
         return copy
     }
 }

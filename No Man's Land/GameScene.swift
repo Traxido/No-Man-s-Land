@@ -9,7 +9,7 @@
 import SpriteKit
 import GameplayKit
 
-class GameScene: SKScene {
+class GameScene: SKScene, SKPhysicsContactDelegate {
     
     let cameraNode: Camera!
     let gameLayer: SKNode!
@@ -36,12 +36,19 @@ class GameScene: SKScene {
     }
     
     override func didMove(to view: SKView) {
+        self.physicsWorld.contactDelegate = self
+        player = Human.init(Name: "Andrew", Race: "caucasian", Gender: "Male", pShirt: darkBrownShirt, pPants: darkPants, pSleeves: caucasianSleeveLightRed, zPos: 1, player: true)
+        player.knightHuman(random: false, Weapon: ironSword, Shield: ironShield, OverCoat: redOverCoat, Armor: ironArmor2, Helmet: ironHelmet5)
+        player.physicsBody = SKPhysicsBody(circleOfRadius: 12)
+        player.physicsBody?.affectedByGravity = false
+        player.physicsBody?.allowsRotation = false
+        player.physicsBody?.categoryBitMask = physicsCategory.player
+        player.physicsBody?.collisionBitMask = physicsCategory.human
+        player.physicsBody?.contactTestBitMask = physicsCategory.human
         
-        player = Human.init(Name: "Andrew", Race: "caucasian", Gender: "Male", pShirt: darkBrownShirt, pPants: darkPants, pSleeves: caucasianSleeveLightRed, zPos: 1)
-        player.knightHuman(random: false, Weapon: warHammer, Shield: ironShield, OverCoat: redOverCoat, Armor: ironArmor2, Helmet: ironHelmet5)
         self.addChild(player)
         
-        for _ in 0...100 {
+        for _ in 0...1 {
             createRandomPerson()
         }
     }
@@ -70,9 +77,17 @@ class GameScene: SKScene {
         let rSleeves = getRandomSleeves(race: race)
         let rPants = getRandomPants()
         
-        human = Human.init(Name: "George", Race: race, Gender: gender, pShirt: rShirt, pPants: rPants, pSleeves: rSleeves, zPos: 1)
+        human = Human.init(Name: "George", Race: race, Gender: gender, pShirt: rShirt, pPants: rPants, pSleeves: rSleeves, zPos: 1, player: false)
         human.knightHuman(random: false, Weapon: getRandomWeapon(), Shield: nil, OverCoat: greenOverCoat, Armor: ironArmor1, Helmet: ironHelmet6)
         human.position = cameraNode.position
+        
+        human.physicsBody = SKPhysicsBody(circleOfRadius: 8)
+        human.physicsBody?.affectedByGravity = false
+        human.physicsBody?.allowsRotation = false
+        human.physicsBody?.categoryBitMask = physicsCategory.human
+        human.physicsBody?.collisionBitMask = physicsCategory.player | physicsCategory.human
+        human.physicsBody?.contactTestBitMask = physicsCategory.player
+        
         self.addChild(human)
     }
     
@@ -152,5 +167,24 @@ class GameScene: SKScene {
     
     override func update(_ currentTime: TimeInterval) {
         cameraNode.update()
+    }
+    
+    func didBegin(_ contact: SKPhysicsContact) {
+        let firstBody = contact.bodyA.node!
+        let secondBody = contact.bodyB.node!
+        
+        
+        
+//        if (firstBody.name == "humanAwareness") && (secondBody.name == "player") {
+//            player.move(firstBody.parent!.position)
+//        } else if (firstBody.name == "player") && (secondBody.name == "humanAwareness") {
+//            player.move(secondBody.parent!.position)
+//        }
+//
+//        if (firstBody.name == "playerAwareness") && (secondBody.name == "human") {
+//            print("Hit3")
+//        } else if (firstBody.name == "human") && (secondBody.name == "playerAwareness") {
+//            print("Hit4")
+//        }
     }
 }
