@@ -37,8 +37,8 @@ class GameScene: SKScene {
     
     override func didMove(to view: SKView) {
         
-        player = Human.init(Name: "Andrew", Race: "caucasian", Gender: "Male", pShirt: getRandomShirt(), pPants: getRandomPants(), pSleeves: getRandomSleeves(race: "caucasian"), zPos: 1)
-        player.knightHuman(random: false, Weapon: nil, Shield: nil, OverCoat: redOverCoat, Armor: ironArmor1, Helmet: ironHelmet6)
+        player = Human.init(Name: "Andrew", Race: "caucasian", Gender: "Male", pShirt: darkBrownShirt, pPants: darkPants, pSleeves: caucasianSleeveLightRed, zPos: 1)
+        player.knightHuman(random: false, Weapon: warHammer, Shield: ironShield, OverCoat: redOverCoat, Armor: ironArmor2, Helmet: ironHelmet5)
         self.addChild(player)
         
         for _ in 0...100 {
@@ -71,7 +71,7 @@ class GameScene: SKScene {
         let rPants = getRandomPants()
         
         human = Human.init(Name: "George", Race: race, Gender: gender, pShirt: rShirt, pPants: rPants, pSleeves: rSleeves, zPos: 1)
-        human.knightHuman(random: false, Weapon: nil, Shield: nil, OverCoat: redOverCoat, Armor: ironArmor1, Helmet: ironHelmet6)
+        human.knightHuman(random: false, Weapon: getRandomWeapon(), Shield: nil, OverCoat: greenOverCoat, Armor: ironArmor1, Helmet: ironHelmet6)
         human.position = cameraNode.position
         self.addChild(human)
     }
@@ -120,23 +120,19 @@ class GameScene: SKScene {
     
     func getRandomShirt() -> Shirt {
         let i = Int(arc4random_uniform(UInt32(villagerShirts.count)))
-        let shirtt = villagerShirts[i]
-        let localShirt = shirtt.copy() as! Shirt
-        localShirt.staticImage = shirtt.staticImage
-        return localShirt
+        let shirt = villagerShirts[i]
+        return shirt
     }
     
     func getRandomSleeves(race: String) -> Sleeves {
         if race == "caucasian" {
             let i = Int(arc4random_uniform(UInt32(caucasianVillagerSleeves.count)))
-            let sleevest = caucasianVillagerSleeves[i]
-            let localSleeves = sleevest.copy() as! Sleeves
-            return localSleeves
+            let sleeves = caucasianVillagerSleeves[i]
+            return sleeves
         } else if race == "africanAmerican" {
             let i = Int(arc4random_uniform(UInt32(africanAmericanVillagerSleeves.count)))
-            let sleevest = africanAmericanVillagerSleeves[i]
-            let localSleeves = sleevest.copy() as! Sleeves
-            return localSleeves
+            let sleeves = africanAmericanVillagerSleeves[i]
+            return sleeves
         } else {
             return Sleeves()
         }
@@ -144,12 +140,15 @@ class GameScene: SKScene {
     
     func getRandomPants() -> Pants {
         let i = Int(arc4random_uniform(UInt32(allPants.count)))
-        let pantst = allPants[i]
-        let localPants = pantst.copy() as! Pants
-        return localPants
+        let pants = allPants[i]
+        return pants
     }
     
-    
+    func getRandomWeapon() -> Weapon {
+        let i = Int(arc4random_uniform(UInt32(allWeapons.count)))
+        let weapon = allWeapons[i]
+        return weapon
+    }
     
     override func update(_ currentTime: TimeInterval) {
         cameraNode.update()
