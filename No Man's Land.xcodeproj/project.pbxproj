@@ -17,7 +17,7 @@
 		AE2A07B523B549B60053D972 /* humanRules.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2A07B423B549B60053D972 /* humanRules.swift */; };
 		AE5E0AE923AC334900C9FC54 /* King.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5E0AE823AC334900C9FC54 /* King.swift */; };
 		AE5E0AF423AC612C00C9FC54 /* Clothing.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5E0AF323AC612C00C9FC54 /* Clothing.swift */; };
-		AE5E0AF623ADC35300C9FC54 /* clothingClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5E0AF523ADC35300C9FC54 /* clothingClasses.swift */; };
+		AE5E0AF623ADC35300C9FC54 /* Clothing Objects.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5E0AF523ADC35300C9FC54 /* Clothing Objects.swift */; };
 		AE9B8AED23AAC65300F8F47D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9B8AEC23AAC65300F8F47D /* AppDelegate.swift */; };
 		AE9B8AF323AAC65300F8F47D /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9B8AF223AAC65300F8F47D /* GameScene.swift */; };
 		AE9B8AF523AAC65300F8F47D /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9B8AF423AAC65300F8F47D /* GameViewController.swift */; };
@@ -28,6 +28,8 @@
 		AE9B8B0923ABD89900F8F47D /* colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9B8B0823ABD89900F8F47D /* colors.swift */; };
 		AE9B8B0C23ABDB9600F8F47D /* Human.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9B8B0B23ABDB9600F8F47D /* Human.swift */; };
 		AE9B8B0E23ABDC9B00F8F47D /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9B8B0D23ABDC9B00F8F47D /* Item.swift */; };
+		AEBD6E4F23B57FE700997BCA /* Weapons Objects.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBD6E4E23B57FE700997BCA /* Weapons Objects.swift */; };
+		AEBD6E5123B5835300997BCA /* All Objects.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBD6E5023B5835300997BCA /* All Objects.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,7 +43,7 @@
 		AE2A07B423B549B60053D972 /* humanRules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = humanRules.swift; sourceTree = "<group>"; };
 		AE5E0AE823AC334900C9FC54 /* King.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = King.swift; sourceTree = "<group>"; };
 		AE5E0AF323AC612C00C9FC54 /* Clothing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clothing.swift; sourceTree = "<group>"; };
-		AE5E0AF523ADC35300C9FC54 /* clothingClasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = clothingClasses.swift; sourceTree = "<group>"; };
+		AE5E0AF523ADC35300C9FC54 /* Clothing Objects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Clothing Objects.swift"; sourceTree = "<group>"; };
 		AE9B8AE923AAC65300F8F47D /* No Man's Land.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "No Man's Land.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE9B8AEC23AAC65300F8F47D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AE9B8AF223AAC65300F8F47D /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -54,6 +56,8 @@
 		AE9B8B0823ABD89900F8F47D /* colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = colors.swift; sourceTree = "<group>"; };
 		AE9B8B0B23ABDB9600F8F47D /* Human.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Human.swift; sourceTree = "<group>"; };
 		AE9B8B0D23ABDC9B00F8F47D /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		AEBD6E4E23B57FE700997BCA /* Weapons Objects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Weapons Objects.swift"; sourceTree = "<group>"; };
+		AEBD6E5023B5835300997BCA /* All Objects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "All Objects.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,7 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				AE118F9323B02D8B0025B732 /* Shield.swift */,
-				AE118F9623B02DA90025B732 /* Weapon.swift */,
+				AEBD6E4D23B57FA600997BCA /* Weapons */,
 				AE118F9823B07F620025B732 /* Tool.swift */,
 			);
 			path = "Hand Held";
@@ -92,7 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				AE5E0AF323AC612C00C9FC54 /* Clothing.swift */,
-				AE5E0AF523ADC35300C9FC54 /* clothingClasses.swift */,
+				AE5E0AF523ADC35300C9FC54 /* Clothing Objects.swift */,
 			);
 			path = Clothing;
 			sourceTree = "<group>";
@@ -145,11 +149,21 @@
 			children = (
 				AE5E0AEA23AC604600C9FC54 /* Clothing */,
 				AE118F9523B02D930025B732 /* Hand Held */,
+				AEBD6E5023B5835300997BCA /* All Objects.swift */,
 				AE2A07B423B549B60053D972 /* humanRules.swift */,
 				AE9B8B0B23ABDB9600F8F47D /* Human.swift */,
 				AE5E0AE823AC334900C9FC54 /* King.swift */,
 			);
 			path = Humans;
+			sourceTree = "<group>";
+		};
+		AEBD6E4D23B57FA600997BCA /* Weapons */ = {
+			isa = PBXGroup;
+			children = (
+				AE118F9623B02DA90025B732 /* Weapon.swift */,
+				AEBD6E4E23B57FE700997BCA /* Weapons Objects.swift */,
+			);
+			path = Weapons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,13 +248,15 @@
 				AE9B8B0C23ABDB9600F8F47D /* Human.swift in Sources */,
 				AE118F9723B02DA90025B732 /* Weapon.swift in Sources */,
 				AE9B8B0923ABD89900F8F47D /* colors.swift in Sources */,
+				AEBD6E4F23B57FE700997BCA /* Weapons Objects.swift in Sources */,
 				AE9B8AF323AAC65300F8F47D /* GameScene.swift in Sources */,
-				AE5E0AF623ADC35300C9FC54 /* clothingClasses.swift in Sources */,
+				AE5E0AF623ADC35300C9FC54 /* Clothing Objects.swift in Sources */,
 				AE5E0AF423AC612C00C9FC54 /* Clothing.swift in Sources */,
 				AE9B8B0E23ABDC9B00F8F47D /* Item.swift in Sources */,
 				AE9B8AF523AAC65300F8F47D /* GameViewController.swift in Sources */,
 				AE9B8AED23AAC65300F8F47D /* AppDelegate.swift in Sources */,
 				AE2A07B523B549B60053D972 /* humanRules.swift in Sources */,
+				AEBD6E5123B5835300997BCA /* All Objects.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
